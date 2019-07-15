@@ -4,7 +4,7 @@
 #
 Name     : mvn-maven-release
 Version  : 2.5.3
-Release  : 1
+Release  : 2
 URL      : https://github.com/apache/maven-release/archive/maven-release-2.5.3.tar.gz
 Source0  : https://github.com/apache/maven-release/archive/maven-release-2.5.3.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-release-plugin/2.5.3/maven-release-plugin-2.5.3.jar
@@ -12,17 +12,37 @@ Source2  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-r
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
+Requires: mvn-maven-release-data = %{version}-%{release}
 
 %description
 Deploying web site
 -------------------
 see http://maven.apache.org/developers/website/deploy-component-reference-documentation.html
 
+%package data
+Summary: data components for the mvn-maven-release package.
+Group: Data
+
+%description data
+data components for the mvn-maven-release package.
+
+
 %prep
 
 %build
 
 %install
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-release-plugin/2.5.3
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-release-plugin/2.5.3
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-release-plugin/2.5.3
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-release-plugin/2.5.3
+
 
 %files
 %defattr(-,root,root,-)
+
+%files data
+%defattr(-,root,root,-)
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-release-plugin/2.5.3/maven-release-plugin-2.5.3.jar
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-release-plugin/2.5.3/maven-release-plugin-2.5.3.pom
