@@ -4,11 +4,12 @@
 #
 Name     : mvn-maven-release
 Version  : 2.5.3
-Release  : 2
+Release  : 3
 URL      : https://github.com/apache/maven-release/archive/maven-release-2.5.3.tar.gz
 Source0  : https://github.com/apache/maven-release/archive/maven-release-2.5.3.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-release-plugin/2.5.3/maven-release-plugin-2.5.3.jar
 Source2  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-release-plugin/2.5.3/maven-release-plugin-2.5.3.pom
+Source3  : https://repo.maven.apache.org/maven2/org/apache/maven/release/maven-release/2.5.3/maven-release-2.5.3.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -38,6 +39,9 @@ cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugin
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-release-plugin/2.5.3
 cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-release-plugin/2.5.3
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/release/maven-release/2.5.3
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/release/maven-release/2.5.3
+
 
 %files
 %defattr(-,root,root,-)
@@ -46,3 +50,4 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugin
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-release-plugin/2.5.3/maven-release-plugin-2.5.3.jar
 /usr/share/java/.m2/repository/org/apache/maven/plugins/maven-release-plugin/2.5.3/maven-release-plugin-2.5.3.pom
+/usr/share/java/.m2/repository/org/apache/maven/release/maven-release/2.5.3/maven-release-2.5.3.pom
