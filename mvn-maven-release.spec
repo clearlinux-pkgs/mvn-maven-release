@@ -4,7 +4,7 @@
 #
 Name     : mvn-maven-release
 Version  : 2.5.3
-Release  : 3
+Release  : 4
 URL      : https://github.com/apache/maven-release/archive/maven-release-2.5.3.tar.gz
 Source0  : https://github.com/apache/maven-release/archive/maven-release-2.5.3.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-release-plugin/2.5.3/maven-release-plugin-2.5.3.jar
